@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Gradient background */
+    color: #fff;
+    text-align: center;
+    overflow: hidden; /* Hide potential scrollbar from animations */
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%; /* If your logo is circular */
+    animation: rotateIn 2s ease-out;
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-360deg) scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fdbb2d; /* Accent color for the main title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    border-radius: 10px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.countdown-item span:first-child {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #fdbb2d; /* Accent color for numbers */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-item span:last-child {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: #eee;
+}
+
+.updates-message {
+    font-size: 1em;
+    font-style: italic;
+    color: #ccc;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 40px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .countdown-item {
+        padding: 15px 20px;
+        min-width: 80px;
+    }
+
+    .countdown-item span:first-child {
+        font-size: 2.5em;
+    }
+
+    .countdown-item span:last-child {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+    }
+
+    .countdown-item span:first-child {
+        font-size: 2em;
+    }
+}
